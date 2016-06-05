@@ -1,0 +1,9 @@
+[package]
+name = "rolly_cow"
+version = "0.1.0"
+authors = ["Colin Davidson <colin@pentaquine.com>"]
+
+[dependencies]
+glium = "*"
+image = "*"
+simd = "*"
