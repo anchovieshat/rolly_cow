@@ -6,4 +6,3 @@ authors = ["Colin Davidson <colin@pentaquine.com>"]
 [dependencies]
 glium = "*"
 image = "*"
-simd = "*"

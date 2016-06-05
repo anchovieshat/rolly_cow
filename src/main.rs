@@ -123,7 +123,7 @@ pub fn rotate_z(angle: f32) -> [[f32; 4]; 4] {
     ]
 }
 
-pub fn simd_pack(mat: [[f32; 4]; 4]) -> [f32x4; 4] {
+/*pub fn simd_pack(mat: [[f32; 4]; 4]) -> [f32x4; 4] {
     let r1 = f32x4::new(mat[0][0], mat[0][1], mat[0][2], mat[0][3]);
     let r2 = f32x4::new(mat[1][0], mat[1][1], mat[1][2], mat[1][3]);
     let r3 = f32x4::new(mat[2][0], mat[2][1], mat[2][2], mat[2][3]);
@@ -142,7 +142,7 @@ pub fn simd_unpack(mat: [f32x4; 4]) -> [[f32; 4]; 4] {
 
 pub fn simd_mul_mat4(m1: [f32x4; 4], m2: [f32x4; 4]) -> [f32; 4] {
     [m1[0] * m2[0], m1[1] * m2[1], m1[2] * m2[2], m1[3] * m2[3]]
-}
+}*/
 
 pub fn mul_mat4(m1: [[f32; 4]; 4], m2: [[f32; 4]; 4]) -> [[f32; 4]; 4] {
     [
@@ -255,11 +255,11 @@ fn main() {
         }
     }
 
-    let image = image::load(Cursor::new(&include_bytes!("../assets/cow.png")[..]), image::PNG).unwrap().to_rgba();
+/*    let image = image::load(Cursor::new(&include_bytes!("../assets/cow.png")[..]), image::PNG).unwrap().to_rgba();
     let image_dimensions = image.dimensions();
     let image = glium::texture::RawImage2d::from_raw_rgba_reversed(image.into_raw(), image_dimensions);
     let texture = glium::texture::SrgbTexture2d::new(&display, image).unwrap();
-
+*/
     let vertex_buffer = glium::VertexBuffer::new(&display, &verts).unwrap();
     let normal_buffer = glium::VertexBuffer::new(&display, &normals).unwrap();
 
